@@ -1,0 +1,21 @@
+{
+  "short_name": "EB Tire",
+  "name": "EB 24小時換呔服務",
+  "description": "Professional 24/7 Roadside Tire Assistance.",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/ec4899/ffffff?text=EB",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://placehold.co/512x512/ec4899/ffffff?text=EB",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ec4899",
+  "background_color": "#fff1f2"
+}

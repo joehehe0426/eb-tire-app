@@ -1,0 +1,8 @@
+{
+  "name": "呔妹 24小時上門換呔服務",
+  "description": "Professional 24/7 Roadside Tire Assistance and Emergency Services.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
