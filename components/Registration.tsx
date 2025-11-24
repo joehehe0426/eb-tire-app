@@ -18,7 +18,9 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
     setTimeout(() => {
       setLoading(false);
       setStep('VERIFY');
-      alert(`模擬驗證碼: 8888 (發送至 ${phone})`);
+      // In a real app, this would be handled by a backend SMS service.
+      // Keeping the alert for usability in this environment so you can log in.
+      alert(`驗證碼已發送 (測試碼: 8888)`);
     }, 1500);
   };
 
@@ -28,10 +30,6 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
     } else {
       alert("驗證碼錯誤 (請輸入 8888)");
     }
-  };
-
-  const handleSkip = () => {
-    onVerify(phone || '88888888');
   };
 
   return (
@@ -50,9 +48,6 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
                   src="/logo.png" 
                   alt="EB Tire Repair Logo" 
                   className="h-full w-auto object-contain drop-shadow-xl filter"
-                  onError={(e) => {
-                     e.currentTarget.src = "https://placehold.co/400x400/ec4899/ffffff?text=EB+Logo";
-                  }}
                 />
              </div>
           </div>
@@ -97,13 +92,6 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
               }`}
             >
               {loading ? '發送中...' : '獲取驗證碼'}
-            </button>
-            
-            <button
-              onClick={handleSkip}
-              className="w-full py-2 text-brand-accent/70 text-sm font-medium hover:text-brand-accent hover:underline transition-colors"
-            >
-              Skip Verification (Demo Mode)
             </button>
           </div>
         ) : (
@@ -157,12 +145,6 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
               >
                 返回修改電話
               </button>
-               <button
-                  onClick={handleSkip}
-                  className="w-full text-brand-accent/70 text-sm font-medium hover:text-brand-accent hover:underline transition-colors"
-                >
-                  Skip Verification (Demo Mode)
-                </button>
             </div>
           </div>
         )}

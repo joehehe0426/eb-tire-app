@@ -1,20 +1,27 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# EB Tire Repair App
 
-# Run and deploy your AI Studio app
+## Logo Setup
+To display the custom logo, please upload your image file named `logo.png` to the **root directory** of this project.
+The root directory is the folder containing `index.html`, `package.json`, and `vite.config.ts`.
 
-This contains everything you need to run your app locally.
+## How to Run locally
 
-View your app in AI Studio: https://ai.studio/apps/drive/1GMoQUq2A47w7nYHanp2TxUyq0Ip999DR
+### 1. Install Dependencies
+Ensure you have Node.js installed, then run:
+```bash
+npm install
+```
 
-## Run Locally
+### 2. Configure API Key
+This app uses Google Gemini API for tire analysis.
+1. Create a new file named `.env` in the root directory.
+2. Add your API key to it:
+```
+API_KEY=your_actual_google_api_key_here
+```
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 3. Start Development Server
+```bash
+npm run dev
+```
+Open the URL shown in the terminal (usually `http://localhost:5173`) to view the app.

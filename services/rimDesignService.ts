@@ -19,7 +19,7 @@ export const generateRimDesign = async (base64Image: string, stylePrompt: string
             },
           },
           {
-            text: `A photorealistic close-up of a car wheel rim, automotive design, high quality, 8k resolution. Style: ${stylePrompt}. Isolated on clean background.`,
+            text: `Update the car wheel rims in this image to match the style: "${stylePrompt}". Maintain the original car angle, lighting, perspective, and background. High quality, photorealistic, 8k resolution.`,
           },
         ],
       },

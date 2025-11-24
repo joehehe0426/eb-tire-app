@@ -74,9 +74,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
                 src="/logo.png" 
                 alt="Logo" 
                 className="h-10 w-auto max-w-[100px] object-contain drop-shadow-md bg-white/10 rounded-lg backdrop-blur-sm p-1"
-                onError={(e) => {
-                   e.currentTarget.src = "https://placehold.co/100x100/ffffff/ec4899?text=EB";
-                }}
               />
           </div>
 

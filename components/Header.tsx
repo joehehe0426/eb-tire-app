@@ -11,10 +11,6 @@ export const Header: React.FC = () => {
                src="/logo.png" 
                alt="EB Tire Repair Logo" 
                className="h-full w-auto object-contain"
-               onError={(e) => {
-                   // Fallback if local file not found
-                   e.currentTarget.src = "https://placehold.co/400x400/ec4899/ffffff?text=EB";
-               }}
              />
           </div>
           <div>
