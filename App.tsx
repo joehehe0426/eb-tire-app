@@ -122,7 +122,9 @@ const App: React.FC = () => {
     } else if (serviceId === 'oil-change') {
       setCurrentView(AppView.MAINTENANCE_FORM);
     } else if (serviceId === 'rim-design') {
-      setCurrentView(AppView.RIM_DESIGN);
+      // Premium feature - coming soon
+      alert('AI 輪圈改色功能即將推出，敬請期待！\n\n此功能將為尊貴會員專享。');
+      return;
     } else if (serviceId === 'review') {
       setCurrentView(AppView.REVIEW_FORM);
     } else {

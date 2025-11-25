@@ -41,12 +41,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
       icon: <Droplet className="w-6 h-6" />,
       isEmergency: false 
     },
-    { 
-      id: 'rim-design', 
-      title: 'AI 輪圈改色', 
-      icon: <Palette className="w-6 h-6" />,
-      isEmergency: false 
-    },
+    // Rim design feature - Premium only (disabled for now)
+    // { 
+    //   id: 'rim-design', 
+    //   title: 'AI 輪圈改色', 
+    //   icon: <Palette className="w-6 h-6" />,
+    //   isEmergency: false,
+    //   isPremium: true
+    // },
     { 
       id: 'review', 
       title: '評價服務', 

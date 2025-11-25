@@ -24,13 +24,23 @@ Ensure you have Node.js installed, then run:
 npm install
 ```
 
-### 2. Configure API Key
-This app uses Google Gemini API for tire analysis.
+### 2. Configure AI Provider (Hugging Face - Default)
+This app uses **Hugging Face** by default for tire analysis (FREE, works in Hong Kong).
+
 1. Create a new file named `.env` in the root directory.
-2. Add your API key to it:
+2. Add:
 ```
-API_KEY=your_actual_google_api_key_here
+VITE_AI_PROVIDER=huggingface
 ```
+**That's it!** No API key needed for basic usage.
+
+**Optional**: Get free API key at [huggingface.co](https://huggingface.co) for higher rate limits:
+```
+VITE_AI_PROVIDER=huggingface
+VITE_HUGGINGFACE_API_KEY=your_key_here
+```
+
+**Note**: Rim design feature is currently disabled (premium feature coming soon). See `SETUP_HUGGINGFACE.md` for detailed setup.
 
 ### 3. Start Development Server
 ```bash

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Camera, Wand2, ChevronLeft, Image as ImageIcon, Download, Share2, Loader2, X } from 'lucide-react';
-import { generateRimDesign } from '../services/rimDesignService';
+import { generateRimDesign } from '../services/aiService';
 
 interface RimDesignFormProps {
   onBack: () => void;
