@@ -37,11 +37,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'  # Cache npm for faster builds
+          # Removed cache - requires package-lock.json
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm ci  # ci is faster and more reliable than npm install
+        run: npm install  # Using install instead of ci (no lock file needed)
 
       # Step 4: Build your app
       - name: Build app
