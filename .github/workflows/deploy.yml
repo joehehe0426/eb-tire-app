@@ -43,6 +43,14 @@ jobs:
       - name: Install dependencies
         run: npm install  # Using install instead of ci (no lock file needed)
 
+      # Step 3.5: Ensure logo.png is in public folder (Vite requirement)
+      - name: Setup public assets
+        run: |
+          mkdir -p public
+          if [ -f logo.png ] && [ ! -f public/logo.png ]; then
+            cp logo.png public/logo.png
+          fi
+
       # Step 4: Build your app
       - name: Build app
         run: npm run build
@@ -50,6 +58,8 @@ jobs:
           # Environment variables for build
           VITE_AI_PROVIDER: ${{ secrets.VITE_AI_PROVIDER || 'huggingface' }}
           VITE_HUGGINGFACE_API_KEY: ${{ secrets.VITE_HUGGINGFACE_API_KEY }}
+          # GitHub repository info for base path
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
       # Step 5: Set up GitHub Pages
       - name: Setup Pages
