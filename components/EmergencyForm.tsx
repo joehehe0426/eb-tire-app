@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Camera, Send, X, AlertTriangle, Loader2 } from 'lucide-react';
 import { TirePosition, EmergencyRequest } from '../types';
-import { analyzeTireImage } from '../services/geminiService';
+import { analyzeTireImage } from '../services/aiService';
 
 interface EmergencyFormProps {
   onSubmit: (data: EmergencyRequest) => void;

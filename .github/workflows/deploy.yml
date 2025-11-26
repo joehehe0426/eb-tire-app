@@ -1,0 +1,87 @@
+name: Deploy to GitHub Pages
+
+# When to run this workflow
+on:
+  push:
+    branches:
+      - main  # Run when you push to main branch
+  workflow_dispatch:  # Allow manual trigger
+
+# Permissions needed
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Prevent multiple deployments at once
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    # Set up GitHub Pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      # Step 1: Get your code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          # Removed cache - requires package-lock.json
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install  # Using install instead of ci (no lock file needed)
+
+      # Step 3.5: Ensure logo.png and service-worker.js are in public folder (Vite requirement)
+      - name: Setup public assets
+        run: |
+          mkdir -p public
+          if [ -f logo.png ] && [ ! -f public/logo.png ]; then
+            cp logo.png public/logo.png
+          fi
+          if [ -f service-worker.js ] && [ ! -f public/service-worker.js ]; then
+            cp service-worker.js public/service-worker.js
+          fi
+          if [ -f manifest.json ] && [ ! -f public/manifest.json ]; then
+            cp manifest.json public/manifest.json
+          fi
+
+      # Step 4: Build your app
+      - name: Build app
+        run: npm run build
+        env:
+          # Environment variables for build
+          VITE_AI_PROVIDER: ${{ secrets.VITE_AI_PROVIDER || 'huggingface' }}
+          VITE_HUGGINGFACE_API_KEY: ${{ secrets.VITE_HUGGINGFACE_API_KEY }}
+          # Supabase Database (optional)
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          # GitHub repository info for base path
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      # Step 5: Set up GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # Step 6: Upload build files
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'  # Vite builds to 'dist' folder
+
+      # Step 7: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

@@ -5,9 +5,15 @@ import App from './App';
 // Register Service Worker for PWA capabilities
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then((reg) => console.log('Service Worker registered', reg))
-      .catch((err) => console.log('Service Worker failed', err));
+    // Use base URL to ensure service worker works with GitHub Pages base path
+    const swPath = `${import.meta.env.BASE_URL}service-worker.js`;
+    navigator.serviceWorker.register(swPath, { scope: import.meta.env.BASE_URL })
+      .then((reg) => {
+        console.log('Service Worker registered', reg);
+      })
+      .catch((err) => {
+        console.log('Service Worker failed', err);
+      });
   });
 }
 

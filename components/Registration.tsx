@@ -47,8 +47,8 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
           <div className="h-32 w-full flex items-center justify-center mb-4">
              <div className="h-full w-auto relative">
                 <img 
-                  src="/logo.png" 
-                  alt="EB Tire Repair Logo" 
+                  src={`${import.meta.env.BASE_URL}logo.png`}
+                  alt="EB Rescue App Logo" 
                   className="h-full w-auto object-contain drop-shadow-xl filter"
                 />
              </div>
@@ -154,7 +154,7 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
       
       {/* Decorative footer */}
       <div className="py-4 text-center text-xs text-brand-primary/40 font-medium">
-        EB Tire Rescue App v1.0
+        EB Rescue App v1.0
       </div>
     </div>
   );

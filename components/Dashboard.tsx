@@ -41,12 +41,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
       icon: <Droplet className="w-6 h-6" />,
       isEmergency: false 
     },
-    { 
-      id: 'rim-design', 
-      title: 'AI 輪圈改色', 
-      icon: <Palette className="w-6 h-6" />,
-      isEmergency: false 
-    },
+    // Rim design feature - Premium only (disabled for now)
+    // { 
+    //   id: 'rim-design', 
+    //   title: 'AI 輪圈改色', 
+    //   icon: <Palette className="w-6 h-6" />,
+    //   isEmergency: false,
+    //   isPremium: true
+    // },
     { 
       id: 'review', 
       title: '評價服務', 
@@ -71,7 +73,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
           {/* Absolute Top Left Logo */}
           <div className="absolute top-4 left-4 z-10">
               <img 
-                src="/logo.png" 
+                src={`${import.meta.env.BASE_URL}logo.png`}
                 alt="Logo" 
                 className="h-10 w-auto max-w-[100px] object-contain drop-shadow-md bg-white/10 rounded-lg backdrop-blur-sm p-1"
               />
@@ -86,7 +88,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
                     <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
                  </div>
               </div>
-              <h3 className="font-black text-2xl tracking-tight drop-shadow-md">EB TIRE RESCUE</h3>
+              <h3 className="font-black text-2xl tracking-tight drop-shadow-md">EB RESCUE APP</h3>
             </div>
           </div>
 

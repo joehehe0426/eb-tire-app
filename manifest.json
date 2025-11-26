@@ -1,20 +1,21 @@
 {
-  "short_name": "EB Tire",
-  "name": "EB 24小時換呔服務",
+  "short_name": "EB Rescue",
+  "name": "EB Rescue App - 24小時換呔服務",
   "description": "Professional 24/7 Roadside Tire Assistance.",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "./logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/logo.png",
+      "src": "./logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "theme_color": "#ec4899",
   "background_color": "#fff1f2"

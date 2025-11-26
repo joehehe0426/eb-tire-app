@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: eb-rescue-app
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: API_KEY
+        sync: false
+
+
