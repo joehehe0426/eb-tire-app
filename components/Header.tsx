@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
           {/* Logo Container - Adjusted for variable aspect ratios */}
           <div className="h-12 w-auto min-w-[3rem] flex items-center justify-center shrink-0 rounded-lg bg-white p-1">
              <img 
-               src="/logo.png" 
+               src={`${import.meta.env.BASE_URL}logo.png`}
                alt="EB Tire Repair Logo" 
                className="h-full w-auto object-contain"
              />

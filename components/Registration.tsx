@@ -47,7 +47,7 @@ export const Registration: React.FC<RegistrationProps> = ({ onVerify }) => {
           <div className="h-32 w-full flex items-center justify-center mb-4">
              <div className="h-full w-auto relative">
                 <img 
-                  src="/logo.png" 
+                  src={`${import.meta.env.BASE_URL}logo.png`}
                   alt="EB Tire Repair Logo" 
                   className="h-full w-auto object-contain drop-shadow-xl filter"
                 />

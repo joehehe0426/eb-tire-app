@@ -73,7 +73,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
           {/* Absolute Top Left Logo */}
           <div className="absolute top-4 left-4 z-10">
               <img 
-                src="/logo.png" 
+                src={`${import.meta.env.BASE_URL}logo.png`}
                 alt="Logo" 
                 className="h-10 w-auto max-w-[100px] object-contain drop-shadow-md bg-white/10 rounded-lg backdrop-blur-sm p-1"
               />
