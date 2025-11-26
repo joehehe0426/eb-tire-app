@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
           <div className="h-12 w-auto min-w-[3rem] flex items-center justify-center shrink-0 rounded-lg bg-white p-1">
              <img 
                src={`${import.meta.env.BASE_URL}logo.png`}
-               alt="EB Tire Repair Logo" 
+               alt="EB Rescue App Logo" 
                className="h-full w-auto object-contain"
              />
           </div>

@@ -88,7 +88,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onServiceSelect, userProfi
                     <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
                  </div>
               </div>
-              <h3 className="font-black text-2xl tracking-tight drop-shadow-md">EB TIRE RESCUE</h3>
+              <h3 className="font-black text-2xl tracking-tight drop-shadow-md">EB RESCUE APP</h3>
             </div>
           </div>
 
